@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+:root {
+  --background: #323437;
+  --text1: #646669;
+  --cursor: #e2b714;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--text1);
+  font-family: "Roboto Mono", monospace;
+  font-size: 24pt;
+  margin: 2rem;
+}
+
+main img {
+  filter: invert(0.404);
+}
+
+#top {
+  display: flex;
+  /* margin: 2rem; */
+  gap: 10px;
+}
+
+#top img {
+  filter: invert(85%) sepia(80%) saturate(4787%) hue-rotate(326deg)
+    brightness(99%) contrast(105%);
+  width: 40px;
+}
+
+h1 {
+  color: #d1d0c5;
+  font-family: "Lexend Deca";
+  font-size: 2rem;
+}
+
+#header {
+  display: grid;
+}
+
+#timer {
+  color: #e2b714;
+}
+
+#game {
+  line-height: 50px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+#game:focus {
+  outline: 0;
+}
+
+#game:focus #words {
+  filter: blur(0);
+}
+
+#game:focus #focus-error {
+  display: none;
+}
+
+#words {
+  filter: blur(5px);
+}
+
+.word {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.correct {
+  color: white;
+}
+
+.incorrect {
+  color: red;
+}
+
+#cursor {
+  color: var(--cursor);
+  position: fixed;
+  top: 190px;
+  left: 28px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#focus-error {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#restart img {
+  transform: scaleX(-1) rotate(-50deg);
+}
+
+button {
+  background-color: var(--background);
+  border: none;
+}
