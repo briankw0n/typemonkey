@@ -2,15 +2,16 @@
 
 :root {
   --background: #323437;
-  --text1: #646669;
+  --text: #646669;
   --cursor: #e2b714;
+  --border: #212224;
 }
 
 body {
   margin: 0;
   padding: 0;
   background-color: var(--background);
-  color: var(--text1);
+  color: var(--text);
   font-family: "Roboto Mono", monospace;
   font-size: 24pt;
   margin: 2rem;
@@ -42,6 +43,18 @@ h1 {
   display: grid;
 }
 
+#settings {
+  background-color: var(--border);
+  border: 5px solid var(--border);
+  border-radius: 15px;
+  padding: 3px;
+  width: 180px;
+}
+
+#settings button {
+  background-color: var(--border);
+}
+
 #timer {
   color: #e2b714;
 }
@@ -66,7 +79,8 @@ h1 {
 }
 
 #words {
-  /* filter: bdolur(5px); */
+  /* filter: blur(5px); */
+  /* margin: 0; */
 }
 
 .word {
@@ -85,7 +99,7 @@ h1 {
 #cursor {
   color: var(--cursor);
   position: fixed;
-  top: 190px;
+  top: 207px;
   left: 28px;
   animation: blink 1s infinite;
 }
@@ -116,6 +130,9 @@ h1 {
 button {
   background-color: var(--background);
   border: none;
+  color: var(--text1);
+  font-family: "Roboto Mono", monospace;
+  font-size: 24pt;
 }
 
 #game:focus #cursor {
