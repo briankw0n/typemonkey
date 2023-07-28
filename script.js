@@ -146,8 +146,16 @@ function resetCursor() {
   const firstWord = document.querySelector(".word");
   const firstLetter = firstWord.querySelector(".letter");
   const cursor = document.getElementById("cursor");
-  cursor.style.top = firstWord.getBoundingClientRect().top - 2 + "px";
-  cursor.style.left = firstLetter.getBoundingClientRect().left - 7 + "px";
+  cursor.style.top = "207px";
+  cursor.style.left = "28px";
+}
+
+function restartGame() {
+  clearInterval(window.timer);
+  window.gameStart = null;
+  removeClass(document.getElementById("game"), "over");
+  resetCursor();
+  newGame();
 }
 
 function gameOver() {
@@ -182,14 +190,6 @@ function gameOver() {
   //   const gameElement = document.getElementById("game");
   //   gameElement.focus(); // Set focus back to the game area after removing "over" class
   // }, 0);
-}
-
-function restartGame() {
-  clearInterval(window.timer);
-  window.gameStart = null;
-  removeClass(document.getElementById("game"), "over");
-  resetCursor();
-  newGame();
 }
 
 document.getElementById("game").addEventListener("keyup", (event) => {
